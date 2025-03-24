@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <script src="script.js"></script>    
+
+    <!-- Titulo Página -->
+    <h1>Coding Cof</h1>
+    <p class="fonte-maior">Parabéns</p>
+    <p class="fonte-maior">Seu ticket está pronto</p>
+    <p class="fonte-menor">Enviamos o ticket para o seu email</p>
+    <p class="fonte-menor">e enviaremos futuras atualizações do evento</p>
+
+    <br>
+    <br>
+
+    <!-- Titulo ticket + conteudo -->
+    <div class="ticket">
+        <h2>Coding Cof</h2>
+        <div id="ticket-content"></div>
+    </div>
+
+    <script>
+        
+        //Gerar URL com os parametros
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        //Dados do ticket da URL
+        const fullName = getParameterByName('fullName');
+        const email = getParameterByName('email');
+        const githubUsername = getParameterByName('githubUsername');
+        const fotoUrl = getParameterByName('fotoUrl');
+        const timestamp = getParameterByName('timestamp');
+
+        //Exibir os dados no ticket
+        if (fullName && email && githubUsername && fotoUrl && timestamp) {
+            const ticketContent = `
+                <p><strong>Nome:</strong> ${fullName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>GitHub:</strong> ${githubUsername}</p>
+                <p><strong>Horário:</strong> ${timestamp}</p>
+                <p><strong>Foto:</strong></p>
+                <img src="${fotoUrl}" alt="Foto" style="max-width: 60px; border-radius: 50%;">
+            `;
+            document.getElementById('ticket-content').innerHTML = ticketContent;
+        } else {
+            document.getElementById('ticket-content').innerHTML = '<p>Erro ao carregar os dados do ticket.</p>';
+        }
+    </script>
+</body>
+
+</html>

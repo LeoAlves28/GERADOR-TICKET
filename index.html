@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf Ticket Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <script src="script.js"></script>    
+    <!-- Descrição da página -->
+    <h1>Coding Cof</h1>
+    <p class="fonte-maior">Sua jornada para a coding</p>
+    <p class="fonte-maior">Conf 2026 começa aqui!</p>
+    <p class="fonte-menor">Garanta seu lugar na maior conferência de codificação do próximo ano.</p>
+    <br>
+    <br>
+
+    <!-- Upload Foto -->
+    <p class="fonte-caixas">Sua foto <i class="fas fa-camera"></i></p> 
+    <div class="box-foto">
+        <div class="upload-seção">
+            <br>
+            <div>
+                <i class="fas fa-cloud-upload-alt" onclick="document.getElementById('foto-upload').click()"></i>
+                <br><div class="upload-texto">Arraste e solte, ou clique para fazer upload!</div>
+                <br><p class="upload-instruções"><i class="fa fa-exclamation-circle"></i> Faça upload da sua foto (JPG or PNG, tamanho max: 500KB)</p>
+            </div>
+            <input type="file" id="foto-upload" accept="image/png, image/jpeg">
+        </div>
+    
+        <!-- Nome Completo -->
+        <div class="dados">
+            <br>
+            <br>
+            <p class="fonte-caixas">Seu Nome <i class="fas fa-edit"></i></p> 
+            <input type="text" id="full-name" placeholder="Seu nome completo">
+        </div>
+
+        <!-- Email -->
+        <div class="dados">
+            <p class="fonte-caixas">Endereço de Email <i class="fas fa-envelope-square"></i></p> 
+            <input type="email" id="email" placeholder="exemplo@gmail.com">
+        </div>
+        
+        <!-- Github -->
+        <div class="dados">
+            <p class="fonte-caixas">Usuário Github <i class="fab fa-github"></i></p> 
+            <input type="text" id="github-username" placeholder="@Usuário">
+        </div>
+
+        <!-- Gerar Ticket -->
+        <button class="generate-btn" onclick="generateTicket()">Gerar Ticket</button>
+
+    </div>
+</body>
+</html>

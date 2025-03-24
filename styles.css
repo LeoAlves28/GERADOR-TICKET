@@ -1,0 +1,218 @@
+/* Estilização da Página */
+body {
+    color: #ffffff;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url('./imagem fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* Título página */
+h1 {
+    text-align: center;
+}
+
+.fonte-maior {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+.fonte-menor {
+    text-align: center;
+    font-size: 20px;
+}
+
+.fonte-caixas {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Caixa Upload */
+.box-foto {
+    width: 400px;
+    margin: auto;
+    height: auto;
+    border: 2px dotted #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Ícone foto */
+.box-foto .fa-camera {
+    font-size: 18px;
+    color: #ebebeb;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Seção Upload */
+.upload-seção {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Ícone Upload */
+.upload-seção .fa-cloud-upload-alt {
+    font-size: 40px;
+    color: #ebebeb;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Texto Caixa Upload */
+.upload-seção .upload-texto {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Ícone atenção abaixo da caixa */
+.upload-seção .fa-exclamation-circle {
+    font-size: 13px;
+    color: #726f6f;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Instruções abaixo da caixa Upload */
+.upload-instruções {
+    font-size: 13px;
+    color: #726f6f;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Esconder o upload padrão do navegador */
+.upload-seção input[type="file"] {
+    display: none;
+}
+
+/* Espaçamento entre as caixas de dados */
+.dados {
+    margin-bottom: 15px;
+}
+
+/* Ícone nome */
+.dados .fa-edit {
+    font-size: 18px;
+    color: #ebebeb;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Ícone email */
+.dados .fa-envelope-square {
+    font-size: 18px;
+    color: #ebebeb;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Ícone Github */
+.dados .fa-github {
+    font-size: 18px;
+    color: #ebebeb;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Estilo das caixas */
+.dados input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Botão Gerar Ticket */
+.generate-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Gerar ticket */
+.ticket {
+    margin: 20px auto;
+    padding: 20px;
+    width: 600px;
+    height: auto;
+    background-image: url('./pattern-ticket.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    color: #ffffff;
+}
+
+/*Responsividade*/
+@media (max-width: 768px) {
+    .box-foto {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .generate-btn {
+        padding: 10px 15px;
+    }
+
+    .ticket {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .fonte-maior {
+        font-size: 24px;
+    }
+
+    .fonte-menor {
+        font-size: 16px;
+    }
+
+    .fonte-caixas {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-foto {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .generate-btn {
+        padding: 10px;
+    }
+
+    .ticket {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .fonte-maior {
+        font-size: 20px;
+    }
+
+    .fonte-menor {
+        font-size: 14px;
+    }
+
+    .fonte-caixas {
+        font-size: 14px;
+    }
+}
