@@ -97,6 +97,8 @@ h1 {
 /* Espaçamento entre as caixas de dados */
 .dados {
     margin-bottom: 15px;
+    width: 400px;
+    margin: 20px auto;
 }
 
 /* Ícone nome */
@@ -138,8 +140,10 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
+    width: 400px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
 }
 
 /* Gerar ticket */
@@ -167,7 +171,12 @@ h1 {
         padding: 15px;
     }
 
+    .dados {
+        width: 90%;
+    }
+
     .generate-btn {
+        width: 90%;
         padding: 10px 15px;
     }
 
@@ -195,7 +204,12 @@ h1 {
         padding: 10px;
     }
 
+    .dados {
+        width: 100%;
+    }
+
     .generate-btn {
+        width: 100%;
         padding: 10px;
     }
 
