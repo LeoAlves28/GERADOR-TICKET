@@ -94,6 +94,27 @@ h1 {
     display: none;
 }
 
+/* Pré visualização foto */
+#preview-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#image-preview {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#remove-image {
+    display: block;
+    margin: 5px auto 0;
+    font-size: 12px;
+}
+
+#remove-image:hover {
+    background: #ff0000
+}
+
 /* Espaçamento entre as caixas de dados */
 .dados {
     margin-bottom: 15px;
@@ -130,6 +151,21 @@ h1 {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+}
+
+/* Email errado */
+.error-emai {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Destaque para campo inválido */
+input:invalid {
+    border-color: #ff0000;
+    border-width: 2px;
 }
 
 /* Botão Gerar Ticket */

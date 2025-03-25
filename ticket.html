@@ -28,39 +28,26 @@
     </div>
 
     <script>
-        
-        //Gerar URL com os parametros
-        function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-
-        //Dados do ticket da URL
-        const fullName = getParameterByName('fullName');
-        const email = getParameterByName('email');
-        const githubUsername = getParameterByName('githubUsername');
-        const fotoUrl = getParameterByName('fotoUrl');
-        const timestamp = getParameterByName('timestamp');
-
-        //Exibir os dados no ticket
-        if (fullName && email && githubUsername && fotoUrl && timestamp) {
-            const ticketContent = `
-                <p><strong>Nome:</strong> ${fullName}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>GitHub:</strong> ${githubUsername}</p>
-                <p><strong>Horário:</strong> ${timestamp}</p>
-                <p><strong>Foto:</strong></p>
-                <img src="${fotoUrl}" alt="Foto" style="max-width: 60px; border-radius: 50%;">
-            `;
-            document.getElementById('ticket-content').innerHTML = ticketContent;
-        } else {
-            document.getElementById('ticket-content').innerHTML = '<p>Erro ao carregar os dados do ticket.</p>';
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const ticketData = JSON.parse(localStorage.getItem('ticketData'));
+            
+            if (ticketData) {
+                document.getElementById('ticket-content').innerHTML = `
+                    <p><strong>Nome:</strong> ${ticketData.fullName}</p>
+                    <p><strong>Email:</strong> ${ticketData.email}</p>
+                    <p><strong>GitHub:</strong> ${ticketData.githubUsername}</p>
+                    <p><strong>Horário:</strong> ${ticketData.timestamp}</p>
+                    <img src="${ticketData.fotoUrl}" alt="Foto" style="max-width: 100px; border-radius: 5px; display: block; margin: 10px 0;">
+                `;
+                
+                //Limpa os dados
+                localStorage.removeItem('ticketData');
+            } else {
+                document.getElementById('ticket-content').innerHTML = '<p>Dados do ticket não encontrados.</p>';
+            }
+        });
     </script>
+
 </body>
 
 </html>

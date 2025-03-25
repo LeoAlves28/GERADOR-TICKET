@@ -19,11 +19,15 @@
 
     <!-- Upload Foto -->
     <p class="fonte-caixas">Sua foto <i class="fas fa-camera"></i></p> 
-    <div class="box-foto">
+    <div class="box-foto" id="drop-area">
         <div class="upload-seção">
+            <div id="preview-container" style="display: none;">
+                <img id="image-preview" src="#" alt="Pré-visualização" style="max-width: 100px; max-height: 100px; border-radius: 5px; margin-bottom: 10px;">
+                <button id="remove-image" style="background: #ff6b6b; color: white; border: none; padding: 2px 5px; border-radius: 3px; cursor: pointer;">Remover</button>
+            </div>
             <br>
-            <div>
-                <i class="fas fa-cloud-upload-alt" onclick="document.getElementById('foto-upload').click()"></i>
+            <div id="drop-zone">
+                <i class="fas fa-cloud-upload-alt" ></i>
                 <br><div class="upload-texto">Arraste e solte, ou clique para fazer upload!</div>
                 <br><p class="upload-instruções"><i class="fa fa-exclamation-circle"></i> Faça upload da sua foto (JPG or PNG, tamanho max: 500KB)</p>
             </div>
@@ -42,6 +46,7 @@
         <div class="dados">
             <p class="fonte-caixas">Endereço de Email <i class="fas fa-envelope-square"></i></p> 
             <input type="email" id="email" placeholder="exemplo@gmail.com">
+            <div id="email-error" class="error-email"></div>
         </div>
         
         <!-- Github -->
