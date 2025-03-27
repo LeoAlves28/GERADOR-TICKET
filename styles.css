@@ -200,6 +200,19 @@ input:invalid {
     color: #ffffff;
 }
 
+.container-imagem-ticket {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.imagem-ticket {
+    max-width: 100%;
+    height: auto; 
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 /*Responsividade*/
 @media (max-width: 768px) {
     .box-foto {
@@ -231,6 +244,10 @@ input:invalid {
 
     .fonte-caixas {
         font-size: 16px;
+    }
+
+    .imagem-ticket {
+        max-width: 150px;
     }
 }
 
@@ -264,5 +281,9 @@ input:invalid {
 
     .fonte-caixas {
         font-size: 14px;
+    }
+
+    .imagem-ticket {
+        max-width: 120px; /* Tamanho máximo ainda menor para celulares */
     }
 }

@@ -17,22 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     }
 
-    //Destacar área do drop
-    ['dragenter', 'dragover'].forEach(eventName => {
-        dropArea.addEventListener(eventName, highlight, false);
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, unhighlight, false);
-    });
-
-    function highlight() {
-        dropArea.classList.add('highlight');
-    }
-
-    function unhighlight() {
-        dropArea.classList.remove('highlight');
-    }
+    
 
     //Arquivos soltos
     dropArea.addEventListener('drop', handleDrop, false);
@@ -47,13 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // Novo: Manipular arquivos selecionados
+    //Manipular pra previsualização
     fileInput.addEventListener('change', function() {
         if (this.files && this.files[0]) {
             updateImagePreview(this.files[0]);
         }
     });
 
+    //Previsualização
     function updateImagePreview(file) {
         if (file.type.match('image.*')) {
             const reader = new FileReader();
@@ -70,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Novo: Botão para remover a imagem
+    //Botão remover imagem
     removeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         resetFileInput();
@@ -83,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fileInput.value = '';
     }
 
-    // Mantenha o clique funcionando
+    //Clicar - imagem
      dropArea.addEventListener('click', function(e) {
         if (e.target !== removeBtn && !previewContainer.contains(e.target)) {
             fileInput.click();
@@ -94,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Função para validar email
+//Validar email
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);

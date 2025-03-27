@@ -28,6 +28,7 @@
     </div>
 
     <script>
+        //Guardar dados (jason)
         document.addEventListener('DOMContentLoaded', function() {
             const ticketData = JSON.parse(localStorage.getItem('ticketData'));
             
@@ -37,7 +38,9 @@
                     <p><strong>Email:</strong> ${ticketData.email}</p>
                     <p><strong>GitHub:</strong> ${ticketData.githubUsername}</p>
                     <p><strong>Horário:</strong> ${ticketData.timestamp}</p>
+                    <div class="container-imagem-ticket">
                     <img src="${ticketData.fotoUrl}" alt="Foto" style="max-width: 100px; border-radius: 5px; display: block; margin: 10px 0;">
+                    </div>
                 `;
                 
                 //Limpa os dados
